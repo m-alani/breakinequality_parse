@@ -1,0 +1,9 @@
+{
+  "DATABASE_URI": "mongodb://admin:admin@ds159737.mlab.com:59737/eleos-1",
+  "CLOUD_PATH": "./cloud/main.js",
+  "APP_ID": "eleos-1",
+  "MASTER_KEY": "my-master-key",
+  "FILE_KEY": "",
+  "PARSE_MOUNT_PATH": "/parse",
+  "SERVER_URL": "https://eleos-150719.appspot.com:8080"
+}
