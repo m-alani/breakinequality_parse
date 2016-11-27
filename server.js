@@ -20,8 +20,29 @@ const express = require('express');
 const nconf = require('nconf');
 const ParseServer = require('parse-server').ParseServer;
 const path = require('path');
+const ParseDashboard = require('parse-dashboard');
 
 nconf.argv().env().file({ file: 'config.json' });
+
+// Code to be run locally to connect Dashboard
+/*
+var dashboard = new ParseDashboard({
+  "apps": [
+    {
+      "serverURL": 'https://20161126t231304-dot-eleos-150719.appspot-preview.com/parse',
+      "appId": nconf.get('APP_ID'),
+      "masterKey": nconf.get('MASTER_KEY'),
+      "appName": "Eleos Remote Help"
+    }
+],
+"users": [
+    {
+        "user":"admin",
+        "pass":"admin"
+    }
+]
+}, true);
+*/
 
 const app = express();
 
@@ -34,14 +55,15 @@ const parseServer = new ParseServer({
   serverURL: nconf.get('SERVER_URL')
 });
 
-// Mount the Parse API server middleware to /parse
 app.use(process.env.PARSE_MOUNT_PATH || '/parse', parseServer);
+
+//app.use('/dashboard', dashboard);
 
 app.get('/', (req, res) => {
   res.status(200).send('<p><h1>Project Eleos</h1></p>Parse is up and running ...');
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');

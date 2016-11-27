@@ -5,5 +5,5 @@
   "MASTER_KEY": "my-master-key",
   "FILE_KEY": "",
   "PARSE_MOUNT_PATH": "/parse",
-  "SERVER_URL": "https://eleos-150719.appspot.com:8080"
+  "SERVER_URL": "https://eleos-150719.appspot.com"
 }

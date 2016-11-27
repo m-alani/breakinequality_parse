@@ -1,8 +1,8 @@
 {
     "name": "appengine-parse-server",
-    "description": "Parse-server sample for Google App Engine",
+    "description": "Parse-server for Google App Engine",
     "version": "0.0.1",
-    "private": true,
+    "private": false,
     "license": "Apache Version 2.0",
     "author": "Google Inc.",
     "engines": {
@@ -11,7 +11,8 @@
     "dependencies": {
         "express": "4.14.0",
         "parse-server": "2.2.22",
-        "nconf": "0.8.4"
+        "nconf": "0.8.4",
+        "parse-dashboard": "1.0.19"
     },
     "scripts": {
         "start": "node server.js",
